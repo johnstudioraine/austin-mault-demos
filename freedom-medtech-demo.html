@@ -148,35 +148,36 @@ nav.scrolled {
 
 /* ── SECTIONS ── */
 .section-light {
-  background: var(--white); color: var(--black); padding: 100px 0; position: relative;
+  background: var(--white); color: var(--black); padding: 100px 0;
+  position: relative; overflow: hidden;
 }
 .section-light::before {
   content: ''; position: absolute; inset: 0;
-  background-image: radial-gradient(rgba(180,37,60,0.035) 1px, transparent 1px);
-  background-size: 22px 22px; pointer-events: none; z-index: 0;
+  background-image: radial-gradient(rgba(180,37,60,0.18) 1px, transparent 1px);
+  background-size: 20px 20px; pointer-events: none; z-index: 0;
+}
+.section-light::after {
+  content: ''; position: absolute;
+  width: 800px; height: 800px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(180,37,60,0.07) 0%, transparent 60%);
+  top: 0; left: 50%; transform: translate(-50%, -20%);
+  pointer-events: none;
 }
 .section-dark {
   background: var(--black); color: var(--white); padding: 100px 0;
-  position: relative;
-}
-/* Gradient bleeds between sections */
-.section-light + .section-dark::after,
-.section-dark + .section-light::before {
-  content: ''; position: absolute; left: 0; right: 0; height: 120px;
-  pointer-events: none; z-index: 0;
-}
-.section-light + .section-dark::after {
-  top: 0;
-  background: linear-gradient(to bottom, rgba(10,10,10,0) 0%, transparent 100%);
-}
-.section-dark + .section-light::before {
-  top: 0;
-  background: linear-gradient(to bottom, rgba(10,10,10,0.03) 0%, transparent 100%);
+  position: relative; overflow: hidden;
 }
 .section-dark::before {
   content: ''; position: absolute; inset: 0;
   background-image: radial-gradient(rgba(180,37,60,0.05) 1px, transparent 1px);
-  background-size: 18px 18px; pointer-events: none;
+  background-size: 20px 20px; pointer-events: none;
+}
+.section-dark::after {
+  content: ''; position: absolute;
+  width: 800px; height: 800px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(150,35,57,0.1) 0%, transparent 60%);
+  top: 0; left: 50%; transform: translate(-50%, -20%);
+  pointer-events: none;
 }
 .section-light .wrap { position: relative; z-index: 1; }
 .section-dark .wrap { position: relative; z-index: 1; }
@@ -186,12 +187,12 @@ nav.scrolled {
 }
 .section-red::before {
   content: ''; position: absolute; inset: 0;
-  background-image: radial-gradient(rgba(0,0,0,0.12) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(rgba(180,37,60,0.18) 1px, transparent 1px);
   background-size: 20px 20px; pointer-events: none;
 }
 .section-red::after {
   content: ''; position: absolute;
-  width: 600px; height: 600px; border-radius: 50%;
+  width: 900px; height: 900px; border-radius: 50%;
   background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 60%);
   top: 50%; left: 50%; transform: translate(-50%, -50%);
   pointer-events: none;
@@ -252,6 +253,24 @@ nav.scrolled {
 .service-card p {
   font-size: 0.85rem; color: var(--muted); line-height: 1.75;
 }
+.service-card .dot {
+  width: 10px; height: 10px; border: 2px solid var(--red);
+  background: var(--red);
+  border-radius: 50%; margin: 0 auto 16px;
+  animation: cardDotPulse 3s ease-in-out infinite;
+  box-shadow: 0 0 0 0 rgba(180,37,60,0);
+}
+@keyframes cardDotPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(180,37,60,0); }
+  50% { box-shadow: 0 0 0 8px rgba(180,37,60,0.2); }
+}
+.service-card:nth-child(2) .dot { animation-delay: 0.3s; }
+.service-card:nth-child(3) .dot { animation-delay: 0.6s; }
+.service-card:nth-child(4) .dot { animation-delay: 0.9s; }
+.service-card:nth-child(5) .dot { animation-delay: 1.2s; }
+.service-card:nth-child(6) .dot { animation-delay: 1.5s; }
+.service-card:nth-child(7) .dot { animation-delay: 1.8s; }
+.service-card:nth-child(8) .dot { animation-delay: 2.1s; }
 .section-dark .service-card h3 { color: var(--white); }
 .section-dark .service-card p { color: rgba(255,255,255,0.55); }
 
@@ -317,8 +336,8 @@ footer::before {
   font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--white);
 }
-.foot-logo { height: 48px; width: auto; opacity: 0.5; transition: opacity 0.3s; }
-.foot-logo:hover { opacity: 0.6; }
+.foot-logo { height: 48px; width: auto; opacity: 1; transition: opacity 0.3s; }
+.foot-logo:hover { opacity: 0.85; }
 .foot-right {
   font-size: 0.7rem; color: var(--muted); letter-spacing: 0.04em;
 }
@@ -349,7 +368,7 @@ footer::before {
   <div class="wrap">
     <div class="hero-inner reveal">
       <span class="label">Freedom MedTech Management</span>
-      <h1><span style="white-space:nowrap;">Strategic &amp; Executive <em>Management</em></span><br>for the<br>Modern MedTech Ecosystem</h1>
+      <h1><span style="white-space:nowrap;">Strategic &amp; Executive <em>Management</em></span><br>for the<br>Modern <em>MedTech Ecosystem</em></h1>
       <p class="hero-desc">Executive leadership, financial governance, and scalable infrastructure&mdash;so you can focus on growth.</p>
       <a href="#contact" class="btn btn-red">Get in Touch</a>
     </div>
@@ -383,41 +402,49 @@ footer::before {
     </div>
     <div class="service-grid">
       <div class="service-card reveal">
+        <div class="dot"></div>
         <h3>Corporate Strategy &amp; Planning</h3>
         <div class="card-bar"></div>
         <p>Develop, implement, and periodically update long-term corporate strategy, business plans, and commercial objectives.</p>
       </div>
       <div class="service-card reveal">
+        <div class="dot"></div>
         <h3>Vendor &amp; Manufacturer Management</h3>
         <div class="card-bar"></div>
         <p>Negotiate, execute, and manage vendor, supplier, and manufacturer agreements, including pricing arrangements and rebate programs.</p>
       </div>
       <div class="service-card reveal">
+        <div class="dot"></div>
         <h3>Key Account Business Development &amp; Expansion</h3>
         <div class="card-bar"></div>
         <p>Serve as executive sponsor and lead business development for key accounts, including stakeholder mapping, pipeline management, account conversions, and pricing negotiations within approved parameters.</p>
       </div>
       <div class="service-card reveal">
+        <div class="dot"></div>
         <h3>Sales Execution Oversight</h3>
         <div class="card-bar"></div>
         <p>Design and implement sales strategies, establish territory quotas, monitor KPIs, and supervise overall salesforce performance.</p>
       </div>
       <div class="service-card reveal">
+        <div class="dot"></div>
         <h3>Operational Governance</h3>
         <div class="card-bar"></div>
         <p>Establish inventory policies, logistics and distribution guidelines, compliance programs, and risk management protocols.</p>
       </div>
       <div class="service-card reveal">
+        <div class="dot"></div>
         <h3>Technology &amp; Process Development</h3>
         <div class="card-bar"></div>
         <p>Design, implement, and maintain proprietary systems and platforms to enhance operational efficiency and data capture.</p>
       </div>
       <div class="service-card reveal">
+        <div class="dot"></div>
         <h3>Performance Monitoring &amp; Reporting</h3>
         <div class="card-bar"></div>
         <p>Deliver quarterly performance reports, vendor scorecards, and financial analyses to the client&rsquo;s board or designated officers.</p>
       </div>
       <div class="service-card reveal">
+        <div class="dot"></div>
         <h3>Risk Management</h3>
         <div class="card-bar"></div>
         <p>Identify, assess, and mitigate strategic, operational, reputational, and regulatory risks associated with commercialization activities.</p>
