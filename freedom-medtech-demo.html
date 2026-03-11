@@ -147,7 +147,14 @@ nav.scrolled {
 }
 
 /* ── SECTIONS ── */
-.section-light { background: var(--white); color: var(--black); padding: 100px 0; position: relative; }
+.section-light {
+  background: var(--white); color: var(--black); padding: 100px 0; position: relative;
+}
+.section-light::after {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(180,37,60,0.03) 1px, transparent 1px);
+  background-size: 24px 24px; pointer-events: none;
+}
 .section-dark {
   background: var(--black); color: var(--white); padding: 100px 0;
   position: relative;
@@ -171,6 +178,7 @@ nav.scrolled {
   background-image: radial-gradient(rgba(180,37,60,0.05) 1px, transparent 1px);
   background-size: 18px 18px; pointer-events: none;
 }
+.section-light .wrap { position: relative; z-index: 1; }
 .section-dark .wrap { position: relative; z-index: 1; }
 .section-red {
   background: var(--deep-red); padding: 80px 0;
