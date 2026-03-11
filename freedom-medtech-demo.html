@@ -66,8 +66,8 @@ body { font-family: 'Montserrat', sans-serif; background: var(--white); color: v
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   height: 72px; display: flex; align-items: center;
-  background: rgba(10,10,10,0.95); backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.97); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
   padding: 0 clamp(24px, 5vw, 64px);
 }
 .nav-inner {
@@ -86,11 +86,11 @@ nav {
   display: inline-flex; align-items: center; justify-content: center;
   height: 38px; padding: 0 24px; border: 2px solid var(--red);
   border-radius: 100px; background: transparent;
-  color: var(--white); font-family: inherit; font-size: 0.65rem;
+  color: var(--red); font-family: inherit; font-size: 0.65rem;
   font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
   text-decoration: none; cursor: pointer; transition: var(--transition);
 }
-.nav-cta:hover { background: var(--red); }
+.nav-cta:hover { background: var(--red); color: var(--white); }
 
 /* ── HERO ── */
 .hero {
@@ -244,7 +244,7 @@ footer {
 <nav>
   <div class="nav-inner">
     <div class="nav-left">
-      <img src="freedomlogo.jpg" alt="Freedom MedTech" class="nav-logo-mark">
+      <img src="freedomlogo.png" alt="Freedom MedTech" class="nav-logo-mark">
     </div>
     <a href="#contact" class="nav-cta">Get in Touch</a>
   </div>
@@ -396,7 +396,7 @@ footer {
   <div class="wrap">
     <div class="foot-inner">
       <div class="foot-left">
-        <img src="freedomlogo.jpg" alt="Freedom MedTech" class="foot-logo">
+        <img src="freedomlogo.png" alt="Freedom MedTech" class="foot-logo">
       </div>
       <span class="foot-right">&copy; 2026 Freedom MedTech Management</span>
     </div>
