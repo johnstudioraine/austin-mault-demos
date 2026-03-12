@@ -289,21 +289,11 @@ nav.scrolled {
   text-align: center;
   padding: 0;
 }
-.principle .dot {
-  width: 14px; height: 14px; border: 2px solid var(--red);
-  background: var(--red);
-  border-radius: 50%; margin: 0 auto 28px;
-  animation: dotPulse 3s ease-in-out infinite;
-  box-shadow: 0 0 0 0 rgba(180,37,60,0);
+.principle svg {
+  display: block; margin: 0 auto 24px; opacity: 0.7;
 }
-.principle:nth-child(2) .dot { animation-delay: 0.5s; }
-.principle:nth-child(3) .dot { animation-delay: 1s; }
-@keyframes dotPulse {
-  0%, 100% { box-shadow: 0 0 8px 0 rgba(180,37,60,0); }
-  50% { box-shadow: 0 0 20px 8px rgba(180,37,60,0.35); }
-}
-.principle h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: 14px; letter-spacing: -0.01em; color: var(--white); }
-.principle p { font-size: 0.95rem; color: rgba(255,255,255,0.5); line-height: 1.8; max-width: 260px; margin: 0 auto; }
+.principle h4 { font-size: 1.35rem; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.02em; color: var(--white); }
+.principle p { font-size: 1.05rem; color: rgba(255,255,255,0.5); line-height: 1.75; max-width: 280px; margin: 0 auto; }
 .principle { opacity: 0; transform: translateY(20px); transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1); }
 .principles.visible .principle:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
 .principles.visible .principle:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.25s; }
@@ -710,17 +700,17 @@ window.addEventListener('load',function(){
     </div>
     <div class="principles reveal">
       <div class="principle">
-        <div class="dot"></div>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         <h4>Integrity</h4>
         <p>Transparent governance and honest partnership at every level.</p>
       </div>
       <div class="principle">
-        <div class="dot"></div>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
         <h4>Discipline</h4>
         <p>Consistent performance driven by process and accountability.</p>
       </div>
       <div class="principle">
-        <div class="dot"></div>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
         <h4>Execution</h4>
         <p>Measurable results that move the business forward.</p>
       </div>
