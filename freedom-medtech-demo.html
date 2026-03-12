@@ -387,8 +387,13 @@ footer::after {
   width: 100%; height: 0%;
   background: var(--red);
   border-radius: 0 0 2px 0;
-  transition: none;
   box-shadow: 0 0 8px rgba(180,37,60,0.4);
+  animation: scrollProgress linear;
+  animation-timeline: scroll();
+}
+@keyframes scrollProgress {
+  from { height: 0%; }
+  to { height: 100%; }
 }
 
 /* ── RESPONSIVE ── */
@@ -762,18 +767,13 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: window.innerWidth <= 768 ? 0.05 : 0.12 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-/* Nav scroll effect + scroll progress */
+/* Nav scroll effect */
 const nav = document.querySelector('nav');
-const scrollFill = document.getElementById('scrollFill');
 let ticking = false;
 window.addEventListener('scroll', () => {
   if (!ticking) {
     requestAnimationFrame(() => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      scrollFill.style.height = progress + '%';
-      nav.classList.toggle('scrolled', scrollTop > 60);
+      nav.classList.toggle('scrolled', window.scrollY > 60);
       ticking = false;
     });
     ticking = true;
