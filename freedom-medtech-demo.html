@@ -29,11 +29,11 @@ html::-webkit-scrollbar { display: none; }
 
 html {
   scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
-  touch-action: manipulation; overflow-x: hidden;
+  touch-action: manipulation; overflow-x: clip; overscroll-behavior-x: none;
 }
 body {
   font-family: 'Montserrat', sans-serif; background: var(--black); color: var(--black);
-  overflow-x: hidden; -webkit-overflow-scrolling: touch;
+  overflow-x: clip; overscroll-behavior-x: none; -webkit-overflow-scrolling: touch;
   -webkit-tap-highlight-color: transparent;
 }
 ::selection { background: rgba(180,37,60,0.3); color: var(--white); }
