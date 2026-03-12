@@ -13,6 +13,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scrollbar-width: none; }
+html::-webkit-scrollbar { display: none; }
 
 :root {
   --red: #B4253C;
@@ -310,7 +312,7 @@ nav.scrolled {
   padding-bottom: 2px; transition: background-size 0.3s;
 }
 .contact-info a:hover { background-size: 0% 1px; }
-.contact-info a { word-break: break-all; }
+.contact-info a { white-space: nowrap; }
 
 /* ── CTA ── */
 .section-red h2 { color: var(--white); margin-bottom: 24px; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; letter-spacing: -0.025em; }
