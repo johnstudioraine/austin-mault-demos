@@ -377,6 +377,24 @@ footer::after {
 }
 .foot-right img { height: 16px; width: auto; display: inline-block; vertical-align: middle; opacity: 0.5; margin-left: 4px; }
 
+/* ── HIGHLIGHTS ── */
+.highlights {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
+  max-width: 960px; margin: 64px auto 0; text-align: left;
+}
+.highlight { }
+.highlight-bar {
+  width: 32px; height: 3px; background: var(--red);
+  border-radius: 2px; margin-bottom: 20px;
+}
+.highlight h4 {
+  font-size: 1rem; font-weight: 700; color: var(--black);
+  margin-bottom: 10px; letter-spacing: -0.01em;
+}
+.highlight p {
+  font-size: 0.9rem; color: var(--muted); line-height: 1.75;
+}
+
 /* ── SECTION EDGES ── */
 .section-edge {
   height: 0; position: relative; z-index: 10; overflow: visible;
@@ -407,6 +425,7 @@ footer::after {
   .sec-head { margin-bottom: 56px; }
   .prose p { font-size: 1.05rem; }
   .principles { grid-template-columns: 1fr; gap: 40px; max-width: 400px; }
+  .highlights { gap: 32px; }
   .nav-logo-mark { height: 64px; }
   .foot-logo { height: 72px; }
 }
@@ -419,6 +438,7 @@ footer::after {
   .hero { padding: 120px 0 80px; }
   .hero h1 { font-size: clamp(1.9rem, 5vw, 2.8rem); }
   .sec-head h2 { font-size: clamp(1.8rem, 4.5vw, 2.4rem); }
+  .highlights { grid-template-columns: 1fr; gap: 36px; max-width: 480px; margin-left: auto; margin-right: auto; }
   .principles { grid-template-columns: 1fr; gap: 36px; max-width: 400px; }
   .principle h4 { font-size: 1.1rem; }
   .principle p { font-size: 0.92rem; }
@@ -488,6 +508,10 @@ footer::after {
   /* Prose — 16px minimum for mobile readability */
   .prose p { font-size: 16px; line-height: 1.8; margin-bottom: 16px; }
 
+  /* Highlights — single column on mobile */
+  .highlights { grid-template-columns: 1fr; gap: 32px; margin-top: 48px; max-width: 400px; margin-left: auto; margin-right: auto; }
+  .highlight-bar { margin-bottom: 16px; }
+
   /* Service cards — spacious, tappable */
   .service-grid { grid-template-columns: 1fr; gap: 20px; margin-top: 44px; }
   .service-card { padding: 36px 28px; }
@@ -513,8 +537,6 @@ footer::after {
   .foot-logo { height: 52px; }
   .foot-right { font-size: 0.75rem; }
 
-  /* Two-col → stacked on mobile */
-  .stat-label { font-size: 0.72rem; }
 
   /* Card stagger — snappy for single column */
   .service-card.reveal:nth-child(n) { transition-delay: 0s; }
@@ -596,9 +618,24 @@ window.addEventListener('load',function(){
       <div class="bar bar-56 bar-red" style="margin-left:auto;margin-right:auto;"></div>
     </div>
     <div class="prose reveal" style="margin:0 auto;text-align:center;">
-      <p>Freedom MedTech Management LLC (&ldquo;Freedom&rdquo;) is a Puerto Rico&ndash;based management organization that delivers comprehensive executive leadership, full operational control, and strategic direction to medical-technology distribution and service companies across the United States.</p>
-      <p>Freedom functions as the corporate management engine behind its partners&mdash;responsible for day-to-day decision-making, performance execution, and long-term growth strategy&mdash;providing the structure, accountability, and leadership capacity of an internal executive team.</p>
-      <p>Operating under Puerto Rico&rsquo;s Act 60 Export Services Decree and in compliance with U.S. Internal Revenue Code Section 937 requirements, Freedom delivers the strategic direction, financial governance, and business infrastructure that enable its partners to scale efficiently while maintaining operational excellence and regulatory compliance.</p>
+      <p>Freedom MedTech Management is the corporate management engine behind its partners&mdash;delivering executive leadership, full operational control, and strategic direction to MedTech distribution companies across the United States.</p>
+    </div>
+    <div class="highlights reveal">
+      <div class="highlight">
+        <div class="highlight-bar"></div>
+        <h4>Day-to-Day Execution</h4>
+        <p>Decision-making, performance management, and growth strategy&mdash;with the structure and accountability of an internal executive team.</p>
+      </div>
+      <div class="highlight">
+        <div class="highlight-bar"></div>
+        <h4>Act 60 Compliant</h4>
+        <p>Operating under Puerto Rico&rsquo;s Export Services Decree and in full compliance with IRC Section 937 requirements.</p>
+      </div>
+      <div class="highlight">
+        <div class="highlight-bar"></div>
+        <h4>Scale-Ready Infrastructure</h4>
+        <p>Financial governance, business systems, and operational frameworks that enable partners to scale efficiently.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -662,22 +699,6 @@ window.addEventListener('load',function(){
         <div class="card-bar"></div>
         <p>Identify, assess, and mitigate strategic, operational, reputational, and regulatory risks associated with commercialization activities.</p>
       </div>
-    </div>
-  </div>
-</section>
-<div class="section-edge"></div>
-
-<!-- OUR ROLE -->
-<section class="section-light">
-  <div class="wrap">
-    <div class="sec-head reveal" style="text-align:center;">
-      <span class="label">Our Role</span>
-      <h2>Strategic &amp; Operational <span class="br"></span>Partnership</h2>
-      <div class="bar bar-56 bar-red" style="margin-left:auto;margin-right:auto;"></div>
-    </div>
-    <div class="prose reveal" style="margin:0 auto;text-align:center;">
-      <p>Freedom MedTech Management serves as a strategic and operational partner to select MedTech companies&mdash;providing executive leadership, financial oversight, and scalable infrastructure that enable its clients to focus on growth, innovation, and customer engagement.</p>
-      <p>By centralizing corporate, operational, and administrative functions, Freedom ensures efficiency, transparency, and sustainable expansion across diverse markets.</p>
     </div>
   </div>
 </section>
