@@ -346,7 +346,7 @@ footer::after {
 }
 .foot-copy {
   font-size: 0.78rem; color: var(--muted); letter-spacing: 0.04em;
-  white-space: nowrap;
+  line-height: 1.6;
 }
 
 /* ── HIGHLIGHTS ── */
@@ -520,7 +520,7 @@ footer::after {
   footer { padding: 52px 0; padding-bottom: calc(52px + env(safe-area-inset-bottom, 0px)); }
   .foot-inner { gap: 10px; }
   .foot-logo { width: 90px; height: auto; }
-  .foot-copy { font-size: 0.75rem; white-space: normal; }
+  .foot-copy { font-size: 0.75rem; }
 
 
   /* Card stagger — snappy for single column */
@@ -750,7 +750,7 @@ window.addEventListener('load',function(){
     <div class="foot-inner">
       <img src="finallogo.png" alt="Freedom MedTech" class="foot-logo">
       <div class="foot-tagline">Strategic MedTech Management</div>
-      <div class="foot-copy">&copy; 2026 Freedom MedTech Management LLC &middot; San Juan, PR</div>
+      <div class="foot-copy">&copy; 2026 Freedom MedTech Management LLC<br>San Juan, PR</div>
     </div>
   </div>
 </footer>
