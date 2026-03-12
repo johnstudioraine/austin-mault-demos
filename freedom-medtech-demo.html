@@ -122,7 +122,7 @@ nav.scrolled {
   display: flex; align-items: center; justify-content: space-between;
 }
 .nav-left { display: flex; align-items: center; gap: 24px; }
-.nav-logo-mark { height: 88px; width: auto; }
+.nav-logo-mark { width: 170px; height: auto; }
 .nav-brand {
   font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--white); text-decoration: none;
@@ -339,7 +339,7 @@ footer::after {
   display: flex; flex-direction: column; align-items: center; text-align: center;
   gap: 12px; position: relative; z-index: 1;
 }
-.foot-logo { height: 88px; width: auto; opacity: 1; transition: opacity 0.3s; }
+.foot-logo { width: 170px; height: auto; opacity: 1; transition: opacity 0.3s; }
 .foot-logo:hover { opacity: 0.85; }
 .foot-tagline {
   font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em;
@@ -415,8 +415,8 @@ footer::after {
   .prose p { font-size: 1.05rem; }
   .principles { grid-template-columns: 1fr; gap: 40px; max-width: 400px; }
   .highlights { gap: 32px; }
-  .nav-logo-mark { height: 76px; }
-  .foot-logo { height: 76px; }
+  .nav-logo-mark { width: 148px; height: auto; }
+  .foot-logo { width: 148px; height: auto; }
 }
 
 @media (max-width: 900px) {
@@ -435,8 +435,8 @@ footer::after {
   .principle p { font-size: 0.92rem; }
   footer { padding: 64px 0; }
   .foot-inner { gap: 10px; }
-  .nav-logo-mark { height: 72px; }
-  .foot-logo { height: 72px; }
+  .nav-logo-mark { width: 136px; height: auto; }
+  .foot-logo { width: 136px; height: auto; }
 }
 
 /* Mobile — designed mobile-native, not adapted from desktop */
@@ -448,7 +448,7 @@ footer::after {
     padding: 0 28px; padding-top: env(safe-area-inset-top, 0px);
   }
   .nav-inner { gap: 12px; }
-  .nav-logo-mark { height: 64px; }
+  .nav-logo-mark { width: 120px; height: auto; }
   .nav-brand { font-size: 0.7rem; letter-spacing: 0.1em; }
   .nav-cta {
     height: 40px; padding: 0 20px;
@@ -521,7 +521,7 @@ footer::after {
   /* Footer — clean, balanced */
   footer { padding: 52px 0; padding-bottom: calc(52px + env(safe-area-inset-bottom, 0px)); }
   .foot-inner { gap: 10px; }
-  .foot-logo { height: 64px; }
+  .foot-logo { width: 120px; height: auto; }
   .foot-copy { font-size: 0.75rem; white-space: normal; }
 
 
@@ -546,8 +546,8 @@ footer::after {
 @media (max-width: 400px) {
   .wrap { padding: 0 20px; }
   nav { padding-left: 20px; padding-right: 20px; }
-  .nav-logo-mark { height: 56px; }
-  .foot-logo { height: 56px; }
+  .nav-logo-mark { width: 108px; height: auto; }
+  .foot-logo { width: 108px; height: auto; }
   .nav-cta { height: 38px; padding: 0 16px; font-size: 0.6rem; }
   .hero h1 { font-size: clamp(1.5rem, 7vw, 2rem); }
   .hero-inner .btn { height: 48px; padding: 0 28px; }
