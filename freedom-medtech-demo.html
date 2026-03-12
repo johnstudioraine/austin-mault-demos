@@ -102,7 +102,7 @@ body {
 /* ── NAV ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: calc(88px + env(safe-area-inset-top, 0px));
+  height: calc(96px + env(safe-area-inset-top, 0px));
   padding-top: env(safe-area-inset-top, 0px);
   display: flex; align-items: center;
   background: rgba(10,10,10,0.85); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
@@ -120,7 +120,7 @@ nav.scrolled {
   display: flex; align-items: center; justify-content: space-between;
 }
 .nav-left { display: flex; align-items: center; gap: 24px; }
-.nav-logo-mark { height: 72px; width: auto; }
+.nav-logo-mark { height: 80px; width: auto; }
 .nav-brand {
   font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--white); text-decoration: none;
@@ -129,7 +129,7 @@ nav.scrolled {
 .nav-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.12); }
 .nav-cta {
   display: inline-flex; align-items: center; justify-content: center;
-  height: 42px; padding: 0 28px; border: 2px solid var(--red);
+  height: 44px; padding: 0 32px; border: 2px solid var(--red);
   border-radius: 100px; background: transparent;
   color: var(--white); font-family: inherit; font-size: 0.7rem;
   font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
@@ -142,7 +142,7 @@ nav.scrolled {
 .hero {
   min-height: 100vh; display: flex; align-items: center;
   text-align: left; background: var(--black);
-  padding: 140px 0 100px; position: relative; overflow: hidden;
+  padding: 160px 0 120px; position: relative; overflow: hidden;
 }
 .hero::before {
   content: ''; position: absolute; inset: 0;
@@ -157,7 +157,7 @@ nav.scrolled {
   pointer-events: none;
 }
 .hero-inner { position: relative; z-index: 1; }
-.hero .label { margin-bottom: 36px; }
+.hero .label { margin-bottom: 40px; }
 .hero h1 {
   font-size: clamp(2.2rem, 4.5vw, 3.8rem); font-weight: 800;
   line-height: 1.2; color: var(--white); letter-spacing: -0.03em;
@@ -167,12 +167,12 @@ nav.scrolled {
 @media (max-width: 768px) { .hero-headline { white-space: normal; } }
 .hero-desc {
   font-size: 1.05rem; font-weight: 400; color: rgba(255,255,255,0.55);
-  line-height: 1.8; max-width: 520px; margin: 36px 0 56px;
+  line-height: 1.8; max-width: 520px; margin: 40px 0 60px;
 }
 
 /* ── SECTIONS ── */
 .section-light {
-  background: var(--white); color: var(--black); padding: 140px 0;
+  background: var(--white); color: var(--black); padding: 160px 0;
   position: relative; overflow: hidden;
 }
 .section-light::before {
@@ -188,7 +188,7 @@ nav.scrolled {
   pointer-events: none;
 }
 .section-dark {
-  background: var(--black); color: var(--white); padding: 140px 0;
+  background: var(--black); color: var(--white); padding: 160px 0;
   position: relative; overflow: hidden;
 }
 .section-dark::before {
@@ -206,7 +206,7 @@ nav.scrolled {
 .section-light .wrap { position: relative; z-index: 1; }
 .section-dark .wrap { position: relative; z-index: 1; }
 .section-red {
-  background: var(--deep-red); padding: 120px 0;
+  background: var(--deep-red); padding: 140px 0;
   text-align: center; position: relative; overflow: hidden;
 }
 .section-red::before {
@@ -228,12 +228,12 @@ nav.scrolled {
 }
 .section-red .wrap { position: relative; z-index: 1; }
 
-.sec-head { margin-bottom: 64px; }
+.sec-head { margin-bottom: 72px; }
 .sec-head h2 {
   font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800;
-  line-height: 1.15; margin-top: 16px; letter-spacing: -0.025em;
+  line-height: 1.15; margin-top: 20px; letter-spacing: -0.025em;
 }
-.sec-head .bar { margin-top: 28px; }
+.sec-head .bar { margin-top: 32px; }
 .sec-head p {
   font-size: 1rem; color: var(--muted); line-height: 1.8;
   max-width: 540px; margin-top: 28px;
@@ -243,21 +243,21 @@ nav.scrolled {
 /* ── ABOUT / PROSE ── */
 .prose { max-width: 720px; text-align: center; }
 .prose p {
-  font-size: 1.1rem; line-height: 1.9; margin-bottom: 28px;
+  font-size: 1.1rem; line-height: 1.9; margin-bottom: 32px;
 }
 .section-light .prose p { color: var(--muted); }
 .section-dark .prose p { color: rgba(255,255,255,0.55); }
 
 /* ── SERVICE CARDS ── */
 .service-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px;
-  margin-top: 72px;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;
+  margin-top: 80px;
 }
 .service-card {
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: var(--radius);
-  padding: 52px 44px;
+  padding: 56px 48px;
   transition: background 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s;
   text-align: center;
 }
@@ -272,21 +272,21 @@ nav.scrolled {
 }
 .service-card .card-bar {
   width: 40px; height: 3px; background: var(--red);
-  border-radius: 2px; margin: 18px auto 20px;
+  border-radius: 2px; margin: 20px auto 22px;
 }
 .service-card p {
   font-size: 0.95rem; color: var(--muted); line-height: 1.8;
 }
 .service-card .dot {
-  width: 10px; height: 10px; border: 2px solid var(--red);
+  width: 12px; height: 12px; border: 2px solid var(--red);
   background: var(--red);
-  border-radius: 50%; margin: 0 auto 20px;
+  border-radius: 50%; margin: 0 auto 24px;
   animation: cardDotPulse 3s ease-in-out infinite;
   box-shadow: 0 0 0 0 rgba(180,37,60,0);
 }
 @keyframes cardDotPulse {
-  0%, 100% { box-shadow: 0 0 6px 0 rgba(180,37,60,0); }
-  50% { box-shadow: 0 0 14px 6px rgba(180,37,60,0.25); }
+  0%, 100% { box-shadow: 0 0 8px 0 rgba(180,37,60,0); }
+  50% { box-shadow: 0 0 18px 7px rgba(180,37,60,0.3); }
 }
 .service-card:nth-child(2) .dot { animation-delay: 0.3s; }
 .service-card:nth-child(3) .dot { animation-delay: 0.6s; }
@@ -300,24 +300,37 @@ nav.scrolled {
 
 /* ── ROLE / COMMITMENT ── */
 .principles {
-  display: flex; gap: 64px; margin-top: 64px; flex-wrap: wrap;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+  margin-top: 72px; max-width: 960px; margin-left: auto; margin-right: auto;
 }
 .principle {
-  flex: 1; min-width: 180px; text-align: center;
+  text-align: center;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 52px 36px 48px;
+  transition: background 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.principle:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(180,37,60,0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px rgba(180,37,60,0.1), 0 0 0 1px rgba(180,37,60,0.12);
 }
 .principle .dot {
-  width: 12px; height: 12px; border: 2px solid var(--red);
-  border-radius: 50%; margin: 0 auto 20px;
+  width: 14px; height: 14px; border: 2px solid var(--red);
+  background: var(--red);
+  border-radius: 50%; margin: 0 auto 24px;
   animation: dotPulse 3s ease-in-out infinite;
   box-shadow: 0 0 0 0 rgba(180,37,60,0);
 }
 .principle:nth-child(2) .dot { animation-delay: 0.5s; }
 .principle:nth-child(3) .dot { animation-delay: 1s; }
 @keyframes dotPulse {
-  0%, 100% { box-shadow: 0 0 6px 0 rgba(180,37,60,0); }
-  50% { box-shadow: 0 0 14px 6px rgba(180,37,60,0.25); }
+  0%, 100% { box-shadow: 0 0 8px 0 rgba(180,37,60,0); }
+  50% { box-shadow: 0 0 20px 8px rgba(180,37,60,0.35); }
 }
-.principle h4 { font-size: 1.15rem; font-weight: 700; margin-bottom: 14px; letter-spacing: -0.01em; }
+.principle h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.01em; }
 .principle p { font-size: 0.95rem; color: rgba(255,255,255,0.55); line-height: 1.8; max-width: 280px; margin: 0 auto; }
 .principle { opacity: 0; transform: translateY(20px); transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1); }
 .principles.visible .principle:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
@@ -343,8 +356,8 @@ nav.scrolled {
 
 /* ── FOOTER ── */
 footer {
-  background: var(--black); padding: 64px 0;
-  padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+  background: var(--black); padding: 72px 0;
+  padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
   border-top: 1px solid rgba(255,255,255,0.06);
   position: relative; overflow: hidden;
 }
@@ -395,7 +408,7 @@ footer::after {
   .prose p { font-size: 1.05rem; }
   .principles { gap: 48px; }
   .nav-logo-mark { height: 64px; }
-  .foot-logo { height: 64px; }
+  .foot-logo { height: 72px; }
 }
 
 @media (max-width: 900px) {
