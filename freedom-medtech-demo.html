@@ -378,6 +378,21 @@ footer::before {
   /* Sections */
   .section-light, .section-dark { padding: 60px 0; }
   .section-red { padding: 48px 0; }
+
+  /* Ensure textures render on mobile */
+  .section-light::before, .section-dark::before, .section-red::before,
+  .hero::before {
+    width: 100%; height: 100%; top: 0; left: 0;
+  }
+  .section-light::after, .section-dark::after {
+    width: 500px; height: 500px;
+  }
+  .section-red::after {
+    width: 500px; height: 500px;
+  }
+  .hero::after {
+    width: 600px; height: 600px;
+  }
   .sec-head { margin-bottom: 32px; }
   .sec-head h2 { font-size: clamp(1.4rem, 5.5vw, 2rem); }
   .sec-head p { font-size: 0.88rem; }
