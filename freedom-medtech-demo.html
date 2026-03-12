@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0A0A0A">
 <title>Freedom MedTech Management</title>
 <link rel="icon" type="image/png" href="finallogo-transparent.png">
+<link rel="apple-touch-icon" href="finallogo-transparent.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <style>
@@ -21,8 +25,17 @@
   --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; touch-action: manipulation; }
-body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--black); }
+html {
+  scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  touch-action: manipulation; overflow-x: hidden;
+}
+body {
+  font-family: 'Montserrat', sans-serif; background: var(--black); color: var(--black);
+  overflow-x: hidden; -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: transparent;
+}
+::selection { background: rgba(180,37,60,0.3); color: var(--white); }
+::-moz-selection { background: rgba(180,37,60,0.3); color: var(--white); }
 
 /* ── SHARED ── */
 .wrap { max-width: 1200px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 64px); }
@@ -88,10 +101,13 @@ body { font-family: 'Montserrat', sans-serif; background: var(--white); color: v
 /* ── NAV ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: 72px; display: flex; align-items: center;
+  height: calc(72px + env(safe-area-inset-top, 0px));
+  padding-top: env(safe-area-inset-top, 0px);
+  display: flex; align-items: center;
   background: rgba(10,10,10,0.85); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255,255,255,0.06);
-  padding: 0 clamp(24px, 5vw, 64px);
+  padding-left: max(clamp(24px, 5vw, 64px), env(safe-area-inset-left, 0px));
+  padding-right: max(clamp(24px, 5vw, 64px), env(safe-area-inset-right, 0px));
   transition: background 0.4s, box-shadow 0.4s;
 }
 nav.scrolled {
@@ -326,6 +342,7 @@ nav.scrolled {
 /* ── FOOTER ── */
 footer {
   background: var(--black); padding: 48px 0;
+  padding-bottom: calc(48px + env(safe-area-inset-bottom, 0px));
   border-top: 1px solid rgba(255,255,255,0.06);
   position: relative; overflow: hidden;
 }
@@ -373,7 +390,7 @@ footer::after {
 /* Mobile */
 @media (max-width: 768px) {
   /* Nav */
-  nav { height: 80px; padding: 0 28px; }
+  nav { height: calc(80px + env(safe-area-inset-top, 0px)); padding: 0 28px; padding-top: env(safe-area-inset-top, 0px); }
   .nav-inner { gap: 12px; }
   .nav-logo-mark { height: 52px; }
   .nav-brand { font-size: 0.6rem; letter-spacing: 0.1em; }
@@ -471,10 +488,19 @@ footer::after {
 </head>
 <body>
 <script>
+// Force scroll to top on every page load (Safari-compatible)
 if(history.scrollRestoration)history.scrollRestoration='manual';
+// Strip hash to prevent anchor-jump on load
+if(window.location.hash && window.location.hash !== '#'){
+  history.replaceState(null,null,' ');
+}
 window.scrollTo(0,0);
-window.addEventListener('DOMContentLoaded',function(){window.scrollTo(0,0);});
-window.addEventListener('load',function(){setTimeout(function(){window.scrollTo(0,0);},0);});
+document.addEventListener('DOMContentLoaded',function(){window.scrollTo(0,0);});
+window.addEventListener('load',function(){
+  window.scrollTo(0,0);
+  // Safari sometimes needs an extra nudge after paint
+  requestAnimationFrame(function(){window.scrollTo(0,0);});
+});
 </script>
 
 <!-- NAV -->
