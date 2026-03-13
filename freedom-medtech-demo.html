@@ -448,8 +448,8 @@ footer::after {
 
 /* ── HIGHLIGHTS ── */
 .highlights {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px;
-  margin-top: 72px; max-width: 880px; margin-left: auto; margin-right: auto;
+  display: grid; grid-template-columns: 1fr; gap: 48px;
+  margin-top: 72px; max-width: 640px; margin-left: auto; margin-right: auto;
 }
 .highlight {
   text-align: center; padding: 0;
@@ -457,8 +457,6 @@ footer::after {
   transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);
 }
 .highlights.visible .highlight:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
-.highlights.visible .highlight:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.25s; }
-.highlights.visible .highlight:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
 .highlight svg {
   display: block; margin: 0 auto 24px; opacity: 0.75;
   filter: drop-shadow(0 0 8px rgba(180,37,60,0.15));
@@ -739,11 +737,6 @@ window.addEventListener('load',function(){
         <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg>
         <h4>Corporate Management Engine</h4>
         <p>Freedom functions as the corporate management engine behind its partners&mdash;responsible for day-to-day decision-making, performance execution, and long-term growth strategy&mdash;providing the structure, accountability, and leadership capacity of an internal executive team.</p>
-      </div>
-      <div class="highlight">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-        <h4>Act 60 Compliant</h4>
-        <p>Operating under Puerto Rico&rsquo;s Act 60 Export Services Decree and in compliance with U.S. Internal Revenue Code Section 937 requirements, Freedom delivers the strategic direction, financial governance, and business infrastructure that enable its partners to scale efficiently while maintaining operational excellence and regulatory compliance.</p>
       </div>
     </div>
   </div>
